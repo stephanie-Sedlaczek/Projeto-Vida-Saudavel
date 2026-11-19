@@ -15,6 +15,9 @@
 }
 
 body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
     margin: 0;
     background: var(--fundo);
     color: var(--texto);
@@ -107,6 +110,7 @@ h3 {
 
 /* Conteúdo principal */
 main {
+    flex: 1;
     max-width: 1120px;
     min-height: 65vh;
     margin: 0 auto;
@@ -463,6 +467,7 @@ video {
 
 /* Rodapé */
 .rodape-site {
+    width: 100%;
     padding: 20px;
     background: #263b2f;
     color: var(--branco);
@@ -473,9 +478,10 @@ video {
     max-width: 1120px;
     margin: 0 auto;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 12px;
+    text-align: center;
 }
 
 .rodape-site a {
