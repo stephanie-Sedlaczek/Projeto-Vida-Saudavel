@@ -1,0 +1,552 @@
+﻿/* Configurações gerais */
+:root {
+    --verde: #356b50;
+    --verde-escuro: #244b37;
+    --verde-claro: #edf4ef;
+    --fundo: #f8faf8;
+    --texto: #29332d;
+    --texto-suave: #5e6962;
+    --branco: #ffffff;
+    --borda: #dce5df;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--fundo);
+    color: var(--texto);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+a {
+    color: var(--verde);
+}
+
+a:hover {
+    color: var(--verde-escuro);
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #9dc9a9;
+    outline-offset: 2px;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--verde-escuro);
+    line-height: 1.25;
+}
+
+/* Cabeçalho e navegação */
+.navbar-site {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid var(--borda);
+    background: var(--branco);
+}
+
+.navbar-container {
+    display: flex;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 12px 20px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.marca-site {
+    color: var(--verde-escuro);
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.marca-icone {
+    margin-right: 6px;
+}
+
+.links-navegacao {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 4px;
+}
+
+.links-navegacao a {
+    padding: 7px 9px;
+    border-radius: 5px;
+    color: var(--texto);
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.links-navegacao a:hover,
+.links-navegacao a[aria-current="page"] {
+    background: var(--verde-claro);
+    color: var(--verde-escuro);
+}
+
+.botao-menu {
+    display: none;
+    padding: 7px 12px;
+    border: 1px solid var(--borda);
+    border-radius: 5px;
+    background: var(--branco);
+    color: var(--verde-escuro);
+    font: inherit;
+}
+
+/* Conteúdo principal */
+main {
+    max-width: 1120px;
+    min-height: 65vh;
+    margin: 0 auto;
+    padding: 36px 20px 56px;
+}
+
+.cabecalho-pagina {
+    padding: 20px 0 16px;
+}
+
+.cabecalho-pagina p,
+.texto-introdutorio {
+    max-width: 760px;
+    color: var(--texto-suave);
+}
+
+.apresentacao-com-imagem {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 20px;
+}
+
+.imagem-pagina {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.texto-destaque {
+    color: var(--verde);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Destaque da página inicial */
+.destaque-inicial {
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr;
+    align-items: center;
+    gap: 28px;
+    padding: 40px;
+    border-radius: 10px;
+    background: var(--verde-claro);
+}
+
+.destaque-inicial h1 {
+    margin: 8px 0 16px;
+    font-size: 40px;
+}
+
+.destaque-inicial p {
+    max-width: 680px;
+    color: var(--texto-suave);
+}
+
+.imagem-destaque {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.mensagem-boas-vindas {
+    color: var(--verde-escuro);
+    font-weight: bold;
+}
+
+/* Cards organizados com Grid */
+.secao-conteudo {
+    margin-top: 40px;
+}
+
+.grade-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.card-site {
+    padding: 20px;
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    background: var(--branco);
+}
+
+.card-site h3 {
+    margin: 8px 0;
+}
+
+.card-icone {
+    font-size: 30px;
+}
+
+/* Cards com imagem de fundo */
+.card-site[id^="card-fundo-"] {
+    display: flex;
+    min-height: 260px;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+    border: 0;
+    background-color: var(--verde-escuro);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--branco);
+}
+
+.card-site[id^="card-fundo-"] h3 {
+    color: var(--branco);
+}
+
+.card-site[id^="card-fundo-"] p,
+.card-site[id^="card-fundo-"] a {
+    color: var(--branco);
+}
+
+#card-fundo-inicio-alimentacao,
+#card-fundo-alimentacao-variedade {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.62)), url("../IMG/Prato Saudável Cheio de Cores-1.png");
+}
+
+#card-fundo-inicio-movimento,
+#card-fundo-exercicios-caminhada {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.62)), url("../IMG/Corrida ao Ar Livre no Parque-3.png");
+}
+
+#card-fundo-inicio-descanso {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.62)), url("../IMG/Quarto Aconchegante sob a Lua Cheia-4.png");
+}
+
+#card-fundo-exercicios-alongamento {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.62)), url("../IMG/Alongamento no parque ao pôr do sol-7.png");
+}
+
+#card-fundo-exercicios-danca {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.62)), url("../IMG/Cartões de Bem-Estar em Movimento-5.png");
+}
+
+#card-fundo-alimentacao-atencao {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.62)), url("../IMG/Alimentação.png");
+}
+
+#card-fundo-alimentacao-hidratacao,
+#card-fundo-habitos-lembretes {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.62)), url("../IMG/Água aromatizada com limão e hortelã-2.png");
+}
+
+#card-fundo-habitos-possivel {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.62)), url("../IMG/Planejamento Saudável à Luz Natural-5.png");
+}
+
+#card-fundo-habitos-jornada {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.62)), url("../IMG/Meditação ao Entardecer na Natureza-6.png");
+}
+
+/* Botões e avisos */
+.btn-site,
+.btn-submit {
+    display: inline-block;
+    margin: 4px 4px 4px 0;
+    padding: 9px 15px;
+    border: 1px solid var(--verde);
+    border-radius: 5px;
+    background: var(--verde);
+    color: var(--branco);
+    font: inherit;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-site:hover,
+.btn-submit:hover {
+    border-color: var(--verde-escuro);
+    background: var(--verde-escuro);
+    color: var(--branco);
+}
+
+.btn-secundario {
+    border-color: var(--borda);
+    background: var(--branco);
+    color: var(--verde-escuro);
+}
+
+.btn-secundario:hover {
+    border-color: var(--verde);
+    background: var(--verde-claro);
+    color: var(--verde-escuro);
+}
+
+.aviso-informativo {
+    margin: 20px 0;
+    padding: 14px 18px;
+    border-left: 3px solid var(--verde);
+    background: var(--verde-claro);
+}
+
+/* Colunas e listas */
+.colunas-conteudo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 20px;
+}
+
+.lista-simples {
+    padding-left: 22px;
+}
+
+.lista-simples li {
+    margin: 7px 0;
+}
+
+/* Tabela */
+.tabela-responsiva {
+    overflow-x: auto;
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    background: var(--branco);
+}
+
+table {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+}
+
+thead th {
+    background: var(--verde-claro);
+    color: var(--verde-escuro);
+}
+
+td,
+th {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--borda);
+    text-align: left;
+}
+
+tbody tr:hover {
+    background: #f6f9f6;
+}
+
+/* Formulário */
+.formulario {
+    max-width: 720px;
+    padding: 24px;
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    background: var(--branco);
+}
+
+.grade-formulario {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.campo-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.campo-completo {
+    grid-column: 1 / -1;
+}
+
+.campo-formulario label {
+    font-weight: bold;
+}
+
+.campo-formulario input,
+.campo-formulario select,
+.campo-formulario textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #bdc9c0;
+    border-radius: 5px;
+    background: var(--branco);
+    color: var(--texto);
+    font: inherit;
+}
+
+.campo-formulario textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.campo-formulario input:focus,
+.campo-formulario select:focus,
+.campo-formulario textarea:focus {
+    outline: 2px solid #9dc9a9;
+    border-color: var(--verde);
+}
+
+.campo-formulario input:invalid:not(:placeholder-shown),
+.campo-formulario textarea:invalid:not(:placeholder-shown) {
+    border-color: #b64242;
+}
+
+.campo-formulario small,
+.legenda-midia,
+.nota-bootstrap {
+    color: var(--texto-suave);
+}
+
+.mensagem-status {
+    min-height: 24px;
+    color: var(--verde-escuro);
+    font-weight: bold;
+}
+
+/* Vídeo, áudio e dicas */
+.caixa-midia {
+    padding: 16px;
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    background: var(--branco);
+}
+
+video,
+audio {
+    display: block;
+    width: 100%;
+}
+
+video {
+    max-height: 420px;
+    background: #17231b;
+}
+
+.legenda-midia,
+.nota-bootstrap {
+    font-size: 14px;
+}
+
+.dica-caixa {
+    min-height: 80px;
+    margin-bottom: 12px;
+    padding: 14px;
+    border: 1px solid var(--borda);
+    border-radius: 6px;
+    background: var(--branco);
+}
+
+/* Rodapé */
+.rodape-site {
+    padding: 20px;
+    background: #263b2f;
+    color: var(--branco);
+}
+
+.rodape-conteudo {
+    display: flex;
+    max-width: 1120px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.rodape-site a {
+    color: var(--branco);
+}
+
+.rodape-site p {
+    margin: 4px 0;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+    .navbar-container {
+        flex-wrap: wrap;
+    }
+
+    .botao-menu {
+        display: block;
+        margin-left: auto;
+    }
+
+    .links-navegacao {
+        display: none;
+        flex-basis: 100%;
+        justify-content: flex-start;
+    }
+
+    .links-navegacao.aberto {
+        display: flex;
+    }
+
+    .grade-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+    main {
+        padding-top: 24px;
+    }
+
+    .destaque-inicial {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 24px;
+    }
+
+    .destaque-inicial h1 {
+        font-size: 32px;
+    }
+
+    .imagem-destaque {
+        order: -1;
+    }
+
+    .apresentacao-com-imagem {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .grade-cards,
+    .colunas-conteudo,
+    .grade-formulario {
+        grid-template-columns: 1fr;
+    }
+
+    .campo-completo {
+        grid-column: auto;
+    }
+
+    .rodape-conteudo {
+        display: block;
+    }
+}
